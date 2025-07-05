@@ -14,7 +14,7 @@ function App() {
     e.preventDefault();
     setStatus("Uploading...");
     try {
-      const response = await fetch("http://localhost:4000/api/submit", {
+      const response = await fetch("https://driver-dashboard-backend.onrender.com/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ customerNumber }),
@@ -62,7 +62,7 @@ function App() {
     const formData = new FormData();
     formData.append("photo", blob, "delivery-photo.jpg");
     try {
-      const response = await fetch("http://localhost:4000/api/upload-photo", {
+      const response = await fetch("https://driver-dashboard-backend.onrender.com/api/upload-photo", {
         method: "POST",
         body: formData,
       });
